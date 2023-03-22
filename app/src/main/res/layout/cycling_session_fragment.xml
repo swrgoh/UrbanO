@@ -223,7 +223,8 @@
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
             app:layout_heightPercent="40%"
-            app:layout_marginTopPercent="38%" />
+            app:layout_marginTopPercent="38%"
+            tools:layout="@layout/fragment_map" />
 
         <Button
             android:id="@+id/start_button"

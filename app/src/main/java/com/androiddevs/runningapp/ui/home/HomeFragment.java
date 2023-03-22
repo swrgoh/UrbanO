@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment implements HomeRecommendationsAdapter
         viewModel.getWeatherData(getContext()).observe(this, new Observer<Drawable>() {
             @Override
             public void onChanged(Drawable drawable) {
-                mBinding.imageWeather.setImageDrawable(drawable);
+                //mBinding.imageWeather.setImageDrawable(drawable);
             }
         });
 
@@ -74,6 +74,7 @@ public class HomeFragment extends Fragment implements HomeRecommendationsAdapter
      * This method sets the logic of the buttons in the UI.
      */
     private void bindButtons() {
+        /*
         mBinding.recommendedRouteSeeAll.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 NavDirections action = HomeFragmentDirections.actionNavigationHomeToRecommendationsFragment();
@@ -98,6 +99,7 @@ public class HomeFragment extends Fragment implements HomeRecommendationsAdapter
                 Navigation.findNavController(v).navigate(action);
             }
         });
+        */
     }
 
     /**
@@ -122,9 +124,9 @@ public class HomeFragment extends Fragment implements HomeRecommendationsAdapter
                     routeList = homeRoutes;
                     adapter = new HomeRecommendationsAdapter(homeRoutes, HomeFragment.this);
                     layoutManager = new LinearLayoutManager(getActivity());
-                    mBinding.HomeRecyclerView.setLayoutManager(layoutManager);
-                    mBinding.HomeRecyclerView.setAdapter(adapter);
-                    mBinding.homeProgressBar.setVisibility(View.GONE);
+                    //mBinding.HomeRecyclerView.setLayoutManager(layoutManager);
+                    //mBinding.HomeRecyclerView.setAdapter(adapter);
+                    //mBinding.homeProgressBar.setVisibility(View.GONE);
                 }
             }
         });
