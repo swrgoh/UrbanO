@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.bikerx.ui.home.HomeFragment"
+        android:name="com.androiddevs.runningapp.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_recommendationsFragment"
@@ -22,12 +22,12 @@
 
     <fragment
         android:id="@+id/navigation_map"
-        android:name="com.example.bikerx.ui.fullmap.FullMapFragment"
+        android:name="com.androiddevs.runningapp.ui.fullmap.FullMapFragment"
         tools:layout="@layout/fragment_full_map" />
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.example.bikerx.ui.history.CyclingHistoryFragment"
+        android:name="com.androiddevs.runningapp.ui.history.CyclingHistoryFragment"
         tools:layout="@layout/fragment_history" >
         <action
             android:id="@+id/action_navigation_history_to_goalsFragment"
@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/navigation_chat"
-        android:name="com.example.bikerx.ui.chat.ChatFragment"
+        android:name="com.androiddevs.runningapp.ui.chat.ChatFragment"
         tools:layout="@layout/chat_fragment" >
         <action
             android:id="@+id/action_navigation_chat_to_startMessageFragment"
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/recommendationsFragment"
-        android:name="com.example.bikerx.ui.home.RecommendationsFragment"
+        android:name="com.androiddevs.runningapp.ui.home.RecommendationsFragment"
         tools:layout="@layout/recommendations_fragment" >
         <action
             android:id="@+id/action_recommendationsFragment_to_startCyclingFragment"
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/startCyclingFragment"
-        android:name="com.example.bikerx.ui.session.CyclingSessionFragment"
+        android:name="com.androiddevs.runningapp.ui.session.CyclingSessionFragment"
         tools:layout="@layout/cycling_session_fragment" >
         <action
             android:id="@+id/action_startCyclingFragment_to_sessionSummaryFragment"
@@ -72,15 +72,15 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.bikerx.ui.settings.SettingsFragment"
+        android:name="com.androiddevs.runningapp.ui.settings.SettingsFragment"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/goalsFragment"
-        android:name="com.example.bikerx.ui.goals.GoalsFragment"
+        android:name="com.androiddevs.runningapp.ui.goals.GoalsFragment"
         tools:layout="@layout/goals_fragment" />
     <fragment
         android:id="@+id/sessionSummaryFragment"
-        android:name="com.example.bikerx.ui.session.SessionSummaryFragment"
+        android:name="com.androiddevs.runningapp.ui.session.SessionSummaryFragment"
         tools:layout="@layout/session_summary_fragment" >
         <argument
             android:name="distanceTravelled"
@@ -95,7 +95,7 @@
     </fragment>
     <fragment
         android:id="@+id/startMessageFragment"
-        android:name="com.example.bikerx.ui.chat.MessageFragment"
+        android:name="com.androiddevs.runningapp.ui.chat.MessageFragment"
         tools:layout="@layout/message_fragment" >
         <action
             android:id="@+id/action_startMessageFragment_to_navigation_chat"

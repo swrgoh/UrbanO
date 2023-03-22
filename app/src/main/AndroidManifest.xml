@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bikerx" >
+    package="com.androiddevs.runningapp" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -16,25 +16,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BikerX">
         <activity
-            android:name=".login.ForgotPasswordActivity"
+            android:name="com.androiddevs.runningapp.login.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".login.RegisterUserActivity"
+            android:name="com.androiddevs.runningapp.login.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".login.EmailLoginActivity"
+            android:name="com.androiddevs.runningapp.login.EmailLoginActivity"
             android:exported="true"
             android:label="@string/app_name"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCjZ8chCPF1mDt-qFiizsAfJFGUoArC04s" />
+            android:value="AIzaSyA2HG5GmSTRN8WtXB0ZOOzwP3P0lfn5zzw" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.androiddevs.runningapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.LoginActivity"
+            android:name="com.androiddevs.runningapp.login.StartActivity"
             android:exported="true" />
     </application>
 

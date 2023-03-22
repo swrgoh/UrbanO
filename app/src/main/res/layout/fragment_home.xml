@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:text="@string/home_title_text_line_1"
             android:textColor="#47599B"
-            android:fontFamily="@font/inter_semibold"
             android:textSize="22dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +29,6 @@
             android:id="@+id/home_title_line_2_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_black"
             android:text="@string/home_title_text_line_2"
             android:textColor="#47599B"
             android:textSize="22dp"

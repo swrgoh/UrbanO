@@ -214,7 +214,7 @@
 
         <fragment
             android:id="@+id/map_fragment"
-            android:name="com.example.bikerx.map.RouteMapFragment"
+            android:name="com.androiddevs.runningapp.map.RouteMapFragment"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
