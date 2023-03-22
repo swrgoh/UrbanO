@@ -267,3 +267,4 @@ public class FullMapFragment extends Fragment {
     }
 
 }
+
