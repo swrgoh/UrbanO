@@ -77,9 +77,11 @@ public class StartActivity extends AppCompatActivity {
     private void checkIfSignedIn() {
         FirebaseUser user = mFirebaseAuth.getCurrentUser();
         if (user != null) {
+            mFirebaseAuth.signOut();
+            /*
             if (user.isEmailVerified()) {
                 startActivity(new Intent(StartActivity.this, MainActivity.class));
-            }
+            }*/
         }
     }
 

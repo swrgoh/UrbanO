@@ -14,6 +14,8 @@ import com.androiddevs.runningapp.MainActivity;
 import com.androiddevs.runningapp.R;
 import com.androiddevs.runningapp.databinding.ActivityEmailLoginBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -80,14 +82,14 @@ public class EmailLoginActivity extends AppCompatActivity {
      */
 
     private void userLogin() {
-        String username = mBinding.etLoginUsername.getText().toString().trim();
+        String email = mBinding.etLoginEmail.getText().toString().trim();
         String password = mBinding.etLoginPassword.getText().toString().trim();
 
         boolean isError = false;
 
-        // error if username empty
-        if (username.isEmpty()) {
-            mBinding.etLoginUsername.setError("Input email");
+        // error if email empty
+        if (email.isEmpty()) {
+            mBinding.etLoginEmail.setError("Input email");
             mBinding.etLoginPassword.requestFocus();
             isError = true;
         }
@@ -106,6 +108,19 @@ public class EmailLoginActivity extends AppCompatActivity {
             return;
         }
 
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        Toast.makeText(EmailLoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(EmailLoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
         /**
          // display a progress dialog box to indicate to user that the app is logging him into account
          //

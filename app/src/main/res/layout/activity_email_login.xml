@@ -35,13 +35,13 @@
         tools:text="Log in" />
 
     <EditText
-        android:id="@+id/etLoginUsername"
+        android:id="@+id/etLoginEmail"
         android:layout_width="378dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/shapeborder"
         android:ems="10"
-        android:hint="   Username"
+        android:hint="   Email"
         android:inputType="textPersonName"
         android:textColor="#000000"
         android:textColorHint="#000000"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/etLoginEmail" />
 
     <Button
         android:id="@+id/btLogin"

@@ -7,12 +7,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+
+import com.androiddevs.runningapp.UserModel;
 import com.androiddevs.runningapp.databinding.ActivityRegisterBinding;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * Register user info into firebase for first time users of the app
@@ -24,6 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
      * declares an instance of FireBaseAuth
      */
     private FirebaseAuth mAuth;
+    private FirebaseFirestore firebaseFirestore;
+
     private ProgressDialog dialog;
 
     @Override
@@ -33,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(mBinding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
         mBinding.goBacktoStartFromRegister.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -138,16 +146,27 @@ public class RegisterActivity extends AppCompatActivity {
      * @param lastname user lastname
      */
     private void registerWithFirebase(String email, String username, String password, String firstname, String lastname) {
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        startActivity(new Intent(RegisterActivity.this, StartActivity.class));
+                        dialog.cancel();
+                        firebaseFirestore.collection("User")
+                                .document(mAuth.getUid())
+                                .set(new UserModel(username, firstname, lastname, email));
+                    }
+                });
+
+                /*
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        user.sendEmailVerification();
-                        registerDisplayName(username, user);
-                        Snackbar snackbar = Snackbar.make(mBinding.getRoot(), "Check your email to verify your account.", Snackbar.LENGTH_SHORT);
-                        snackbar.show();
-                        finish();
-                        startActivity(new Intent(this, StartActivity.class));
+                        // user.sendEmailVerification();
+                        //registerDisplayName(username, user);
+                        // Snackbar snackbar = Snackbar.make(mBinding.getRoot(), "Check your email to verify your account.", Snackbar.LENGTH_SHORT);
+                        // snackbar.show();
+                        // finish();
+                        //  startActivity(new Intent(this, StartActivity.class));
                     } else {
                         // User already exists in Firebase Auth
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
@@ -162,15 +181,6 @@ public class RegisterActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-    }
-
-    /**
-     * register full name of user into firebase database
-     * @param firstname
-     * @param user
-     */
-    private void registerDisplayName(String firstname, FirebaseUser user) {
-        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(firstname).build();
-        user.updateProfile(profileUpdates);
+        */
     }
 }
