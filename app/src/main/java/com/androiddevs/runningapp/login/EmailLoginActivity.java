@@ -113,6 +113,7 @@ public class EmailLoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(EmailLoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(EmailLoginActivity.this, MainActivity.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
