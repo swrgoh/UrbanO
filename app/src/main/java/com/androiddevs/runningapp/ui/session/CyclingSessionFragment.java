@@ -85,7 +85,7 @@ public class CyclingSessionFragment extends Fragment {
     private void bindData() {
         Date date = Calendar.getInstance(TimeZone.getTimeZone("Asia/Singapore")).getTime();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy - h:mm a", Locale.getDefault());
-        mBinding.dateTextView.setText(dateFormat.format(date));
+       // mBinding.dateTextView.setText(dateFormat.format(date));
         viewModel.getSession().observe(this, new Observer<Session>() {
             @Override
             public void onChanged(Session session) {
@@ -93,8 +93,8 @@ public class CyclingSessionFragment extends Fragment {
                 float timeElapsed = (SystemClock.elapsedRealtime() - chronometer.getBase())/1000;
                 float speed = calculateSpeed(distance, timeElapsed);
                 String formattedSpeed = String.format("%.2f", speed);
-                mBinding.distanceDetailsFloat.setText(session.getFormattedDistance());
-                if (state != SessionState.PAUSED) mBinding.avgSpeedFloat.setText(formattedSpeed);
+                //mBinding.distanceDetailsFloat.setText(session.getFormattedDistance());
+               // if (state != SessionState.PAUSED) mBinding.avgSpeedFloat.setText(formattedSpeed);
             }
         });
     }
@@ -103,9 +103,9 @@ public class CyclingSessionFragment extends Fragment {
      * This method sets the logic of the buttons in the UI.
      */
     private void bindButtons() {
-        chronometer = mBinding.chronometer;
+        //chronometer = mBinding.chronometer;
         state = SessionState.PRE_START;
-        mBinding.startButton.setOnClickListener(new View.OnClickListener() {
+       /** mBinding.startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startSession();
@@ -128,7 +128,7 @@ public class CyclingSessionFragment extends Fragment {
             public void onClick(View v) {
                 stopSession();
             }
-        });
+        });*/
     }
 
     /**
@@ -141,9 +141,9 @@ public class CyclingSessionFragment extends Fragment {
         chronometer.setBase(SystemClock.elapsedRealtime());
         chronometer.start();
         state = SessionState.STARTED;
-        mBinding.startButton.setVisibility(View.GONE);
-        mBinding.pauseButton.setVisibility(View.VISIBLE);
-        mBinding.stopButton.setVisibility(View.VISIBLE);
+        //mBinding.startButton.setVisibility(View.GONE);
+        //mBinding.pauseButton.setVisibility(View.VISIBLE);
+        //mBinding.stopButton.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -156,8 +156,8 @@ public class CyclingSessionFragment extends Fragment {
         chronometer.stop();
         state = SessionState.PAUSED;
         pausedTimeElapsed = SystemClock.elapsedRealtime() - chronometer.getBase();
-        mBinding.pauseButton.setVisibility(View.GONE);
-        mBinding.resumeButton.setVisibility(View.VISIBLE);
+       // mBinding.pauseButton.setVisibility(View.GONE);
+       // mBinding.resumeButton.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -170,8 +170,8 @@ public class CyclingSessionFragment extends Fragment {
         chronometer.setBase(SystemClock.elapsedRealtime() - pausedTimeElapsed);
         chronometer.start();
         state = SessionState.STARTED;
-        mBinding.pauseButton.setVisibility(View.VISIBLE);
-        mBinding.resumeButton.setVisibility(View.GONE);
+        //mBinding.pauseButton.setVisibility(View.VISIBLE);
+       // mBinding.resumeButton.setVisibility(View.GONE);
     }
 
     /**

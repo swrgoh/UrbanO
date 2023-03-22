@@ -8,269 +8,140 @@
     android:layout_height="match_parent"
     tools:context=".ui.session.CyclingSessionFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cycling_profile_layout"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="69dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/distance_km"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="93dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="11dp"
+        android:text="min/km"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="157dp"
+        android:layout_marginBottom="91dp"
+        android:text="@string/pause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
 
-        <TextView
-            android:id="@+id/cycling_profile_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:font="@font/inter_extrabold"
-            android:text="@string/cycling_profile"
-            android:textColor="#47599B"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="157dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="91dp"
+        android:text="@string/stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
 
-        <TextView
-            android:id="@+id/date_text_view"
-            android:text="@string/date_time_placeholder"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:textColor="#3361A6"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cycling_profile_text_view"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="414dp"
+        android:layout_height="52dp"
+        android:background="#000000"
+        android:backgroundTint="#3F51B5"
+        android:text="Hello Username"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cycling_details_card"
-        card_view:cardBackgroundColor="#24629A"
-        card_view:cardCornerRadius="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintTop_toBottomOf="@+id/cycling_profile_layout">
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="398dp"
+        android:layout_height="377dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:contentDescription="MapView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 
-        <androidx.percentlayout.widget.PercentRelativeLayout
-            android:id="@+id/cycling_details_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="69dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/distance_placeholder"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
 
-            <ImageView
-                android:id="@+id/progress_bar1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:indeterminate="false"
-                android:src="@drawable/circular_progress_bar"
-                app:layout_heightPercent="88%"
-                app:layout_marginLeftPercent="8.5%"
-                app:layout_widthPercent="33%"
-                />
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="55dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="75dp"
+        android:text="Time"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
 
-            <ImageView
-                android:id="@+id/progress_bar2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:indeterminate="false"
-                android:src="@drawable/circular_progress_bar"
-                app:layout_heightPercent="88%"
-                app:layout_marginLeftPercent="58.5%"
-                app:layout_widthPercent="33%"
-                />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="51dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/avg_speed_placeholder"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/distance_details"
-                android:layout_width="190dp"
-                android:layout_height="74dp"
-                app:layout_heightPercent="50%"
-                app:layout_marginTopPercent="20%"
-                app:layout_widthPercent="50%">
-
-                <ImageView
-                    android:id="@+id/distance_details_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_cycling"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/distance_details_float"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/distance_placeholder"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/distance_details_image" />
-
-                <TextView
-                    android:id="@+id/distance_details_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/distance_km"
-                    android:textColor="@color/white"
-                    android:textSize="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/distance_details_float" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="0dp"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="43dp"
-                    android:layout_marginEnd="147dp"
-                    android:src="@drawable/circular_progress_bar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/time_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_heightPercent="50%"
-                app:layout_marginLeftPercent="50%"
-                app:layout_marginTopPercent="20%"
-                app:layout_widthPercent="60%">
-
-                <ImageView
-                    android:id="@+id/time_details_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_timer"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Chronometer
-                    android:id="@+id/chronometer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/time_details_image" />
-
-                <TextView
-                    android:id="@+id/time_details_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/time_details_text"
-                    android:textColor="@color/white"
-                    android:textSize="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/chronometer" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/avg_speed_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_marginTopPercent="80%"
-                app:layout_marginLeftPercent="30%"
-                app:layout_marginRightPercent="30%">
-                <TextView
-                    android:id="@+id/avg_speed_text"
-                    android:text="@string/avg_speed_text"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/avg_speed_float"/>
-                <TextView
-                    android:id="@+id/avg_speed_float"
-                    android:text="@string/avg_speed_placeholder"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/avg_speed_text"/>
-                <TextView
-                    android:id="@+id/avg_speed_unit"
-                    android:text="@string/avg_speed_unit"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/avg_speed_float"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.percentlayout.widget.PercentRelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.percentlayout.widget.PercentRelativeLayout
-        android:id="@+id/map_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
-
-        <fragment
-            android:id="@+id/map_fragment"
-            android:name="com.androiddevs.runningapp.map.RouteMapFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            app:layout_heightPercent="40%"
-            app:layout_marginTopPercent="38%"
-            tools:layout="@layout/fragment_map" />
-
-        <Button
-            android:id="@+id/start_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#208090"
-            android:text="@string/start"
-            app:layout_marginLeftPercent="20%"
-            app:layout_marginRightPercent="20%"
-            app:layout_marginTopPercent="80%"
-            app:layout_widthPercent="60%" />
-
-        <Button
-            android:id="@+id/pause_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FEBB04"
-            android:text="@string/pause"
-            android:visibility="gone"
-            app:layout_marginLeftPercent="3%"
-            app:layout_marginTopPercent="80%"
-            app:layout_widthPercent="30%" />
-
-        <Button
-            android:id="@+id/resume_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#208090"
-            android:text="@string/resume"
-            android:visibility="gone"
-
-            app:layout_marginLeftPercent="3%"
-            app:layout_marginTopPercent="80%"
-            app:layout_widthPercent="30%" />
-
-        <Button
-            android:id="@+id/stop_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#B42C34"
-            android:text="@string/stop"
-            android:visibility="gone"
-            app:layout_marginLeftPercent="67%"
-            app:layout_marginTopPercent="80%"
-            app:layout_widthPercent="30%" />
-    </androidx.percentlayout.widget.PercentRelativeLayout>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="95dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="15dp"
+        android:text="00:00:00"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
