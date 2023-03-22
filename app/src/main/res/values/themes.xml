@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.BikerX" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Urban" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#3361A6</item>
         <item name="colorPrimaryVariant">#7092C6</item>

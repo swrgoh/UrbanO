@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BIKER-X</string>
+    <string name="app_name">Urban</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -58,7 +58,7 @@
     <string name="distance_km_with_slash">km /</string>
     <string name="goals_chronometer_placeholder">0h 0m</string>
 
-    <string name="biker_x_community_forum">Biker-X Community Forum</string>
+    <string name="urban_community_forum">Urban Community Forum</string>
     <string name="recycler_view_forum_row_item_forumThreadName_text">Biking Along East Coast</string>
     <string name="recycler_view_forum_row_item_forumThreadDescription_text">Let\'s go makan after that!</string>
     <!-- Strings for Message -->

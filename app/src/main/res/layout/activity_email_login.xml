@@ -4,117 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.EmailLoginActivity"
-    tools:visibility="visible">
+    android:background="#EDFAFA"
+    tools:context=".login.EmailLoginActivity">
+
+    <ImageButton
+        android:id="@+id/goBacktoStartFromLogin"
+        android:layout_width="70dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Go back to start screen"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@null"
+        app:srcCompat="@drawable/backbutton" />
 
     <TextView
-        android:id="@+id/banner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/dela_gothic_one"
-        android:text="BIKER-X"
-        android:textAlignment="center"
-        android:textColor="#47599B"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/bannerDescription"
+        android:id="@+id/LoginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Cycling Buddy"
-        android:textAlignment="center"
-        android:textSize="21sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_marginTop="24dp"
+        android:text="Log in"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goBacktoStartFromLogin"
+        tools:text="Log in" />
 
     <EditText
-        android:id="@+id/email"
-        android:layout_width="341dp"
+        android:id="@+id/etLoginUsername"
+        android:layout_width="378dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shapeborder"
         android:ems="10"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bannerDescription" />
+        android:hint="   Username"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginTitle" />
 
     <EditText
-        android:id="@+id/password"
-        android:layout_width="346dp"
+        android:id="@+id/etLoginPassword"
+        android:layout_width="378dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shapeborder"
         android:ems="10"
-        android:hint="Password"
         android:inputType="textPassword"
-
-
-        android:textSize="24sp"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        android:hint="   Password"
+        android:textColorHint="#000000"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginUsername" />
 
     <Button
-        android:id="@+id/signIn"
-        android:layout_width="346dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="80dp"
-        android:text="Login"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        android:id="@+id/btLogin"
+        android:layout_width="378dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shapeborder"
+        android:text="LOG IN"
+        app:backgroundTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
 
-    <TextView
-        android:id="@+id/forgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="25dp"
-        android:text="Forgot Password?"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signIn" />
-
-    <TextView
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:text="Register"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/forgotPassword"
-        app:layout_constraintTop_toTopOf="@+id/forgotPassword" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-
-        />
+    <Button
+        android:id="@+id/btForgotPassword"
+        android:layout_width="378dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shapeborder"
+        android:text="FORGOT PASSWORD"
+        android:textColor="#000000"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,14 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(mBinding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
-        mBinding.btRegister.setOnClickListener(new View.OnClickListener() {
+
+        mBinding.goBacktoStartFromRegister.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(RegisterActivity.this, StartActivity.class));
+            }
+        });
+
+        mBinding.btStartRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = mBinding.etUsername.getText().toString().trim();

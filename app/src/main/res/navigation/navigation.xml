@@ -70,10 +70,7 @@
             app:argType="string"
             app:nullable="true"/>
     </fragment>
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.androiddevs.runningapp.ui.settings.SettingsFragment"
-        tools:layout="@layout/fragment_settings" />
+
     <fragment
         android:id="@+id/goalsFragment"
         android:name="com.androiddevs.runningapp.ui.goals.GoalsFragment"

@@ -51,19 +51,19 @@ public class EmailLoginActivity extends AppCompatActivity {
      * if user clicks forgotpassword button, bring user to forgotpassword page to reset password via email.
      */
     private void bindButtons() {
-        mBinding.register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(EmailLoginActivity.this, RegisterActivity.class));
+        mBinding.goBacktoStartFromLogin.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(EmailLoginActivity.this, StartActivity.class));
             }
         });
-        mBinding.signIn.setOnClickListener(new View.OnClickListener() {
+
+        mBinding.btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userLogin();
             }
         });
-        mBinding.forgotPassword.setOnClickListener(new View.OnClickListener() {
+        mBinding.btForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(EmailLoginActivity.this, ForgotPasswordActivity.class));
@@ -80,77 +80,56 @@ public class EmailLoginActivity extends AppCompatActivity {
      */
 
     private void userLogin() {
-        String email = mBinding.email.getText().toString().trim();
-        String password = mBinding.password.getText().toString().trim();
+        String username = mBinding.etLoginUsername.getText().toString().trim();
+        String password = mBinding.etLoginPassword.getText().toString().trim();
 
-        /**
-         * these if conditions checks for valid input of email and password by user
-         * check if email input by user is empty
-         */
-        if (email.isEmpty()) {
-            mBinding.email.setError("Email required");
-            mBinding.email.requestFocus();
-            return;
+        boolean isError = false;
 
+        // error if username empty
+        if (username.isEmpty()) {
+            mBinding.etLoginUsername.setError("Input email");
+            mBinding.etLoginPassword.requestFocus();
+            isError = true;
         }
 
-        /**
-         * check if email is a valid one
-         */
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            mBinding.email.setError("Please provide valid email");
-            mBinding.email.requestFocus();
-            return;
-        }
-
-        /**
-         * check if user key in a password
-         */
+        // error if password empty
         if (password.isEmpty()) {
-            mBinding.password.setError("Password required");
-            mBinding.password.requestFocus();
+            mBinding.etLoginPassword.setError("Input password");
+            mBinding.etLoginPassword.requestFocus();
             return;
         }
 
-        /**
-         * check if password entered is valid. firebase do not allow password that is <6 characters
-         */
-
+        // error if password not meet requirements
         if (password.length() < 6) {
-            mBinding.password.setError("Minimum password length is 6 characters");
-            mBinding.password.requestFocus();
+            mBinding.etLoginPassword.setError("Input password");
+            mBinding.etLoginPassword.requestFocus();
             return;
         }
 
         /**
-         * display a progress dialog box to indicate to user that the app is logging him into account
-         */
+         // display a progress dialog box to indicate to user that the app is logging him into account
+         //
         ProgressDialog dialog = new ProgressDialog(this);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         //Without this user can hide loader by tapping outside screen
         dialog.setCancelable(false);
         dialog.setMessage("Logging you in...");
         dialog.show();
-/**
- * log user into account by checking if their email and password matches data in firebase
- */
+
+         // log user into account by checking if their email and password matches data in firebase
+         //
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+            public void onComplete(@NonNull Task<AuthResult> task)
 
-                /**
-                 * check if email address has been verified by the user or not
-                 */
+                 // check if email address has been verified by the user or not
                 if (task.isSuccessful()) {
 
 
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                    /**
-                     * if user email is verified, direct user to main activity once user logs in successfully with correct email and password
-                     * else send email verification link to user
-                     */
+                    //if user email is verified, direct user to main activity once user logs in successfully with correct email and password
+                    //else send email verification link to user
 
                     if (user.isEmailVerified()) {
 
@@ -166,14 +145,15 @@ public class EmailLoginActivity extends AppCompatActivity {
                     }
 
 
-                    /**
-                     * if email or password do not match data in firebase, do not log user in and prompt an error message to user that their login credential is wrong
-                     */
+                     // if email or password do not match data in firebase, do not log user in and prompt an error message to user that their login credential is wrong
+                     //
                 } else {
                     dialog.dismiss();
                     Toast.makeText(EmailLoginActivity.this, "Failed to login. check credentials", Toast.LENGTH_LONG).show();
                 }
             }
         });
+
+        */
     }
 }

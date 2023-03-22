@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BikerX">
+        android:theme="@style/Theme.Urban">
         <activity
             android:name="com.androiddevs.runningapp.login.ForgotPasswordActivity"
             android:exported="false" />

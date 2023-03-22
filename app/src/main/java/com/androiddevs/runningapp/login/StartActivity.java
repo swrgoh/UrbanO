@@ -61,14 +61,14 @@ public class StartActivity extends AppCompatActivity {
      */
     private void bindButtons() {
         //mBinding.signInButton.setOnClickListener(view -> signInGoogle());
-        mBinding.btRegister.setOnClickListener(new View.OnClickListener() {
+        mBinding.btStartRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(StartActivity.this, RegisterActivity.class));
             }
         });
 
-        mBinding.goLoginButton.setOnClickListener(view -> navigateToEmailSignIn());
+        mBinding.btStartLogin.setOnClickListener(view -> navigateToEmailSignIn());
     }
 
     /**

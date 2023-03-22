@@ -19,8 +19,6 @@
             android:id="@+id/cycling_profile_text_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:font="@font/inter_extrabold"
-            android:fontFamily="@font/inter_black"
             android:text="@string/cycling_profile"
             android:textColor="#47599B"
             android:textSize="25sp"
@@ -123,6 +121,7 @@
                     android:layout_height="2dp"
                     android:src="@drawable/circular_progress_bar"
                     tools:layout_editor_absoluteX="43dp" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

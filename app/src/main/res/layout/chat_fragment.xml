@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:elegantTextHeight="true"
-        android:text="@string/biker_x_community_forum"
+        android:text="@string/urban_community_forum"
         android:textAlignment="center"
         android:textColor="#47599B"
         android:textSize="25sp"

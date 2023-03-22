@@ -18,7 +18,7 @@
             app:srcCompat="@drawable/logo" />
 
         <Button
-            android:id="@+id/goLoginButton"
+            android:id="@+id/btStartLogin"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -29,7 +29,7 @@
             app:layout_constraintVertical_bias="0.848" />
 
         <Button
-            android:id="@+id/btRegister"
+            android:id="@+id/btStartRegister"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_marginEnd="32dp"
