@@ -60,10 +60,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, StartActivity.class));
             finish();
             return;
-        }else
-        {
-            startActivity(new Intent(this, ProfileActivity.class));
-            finish();
         }
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -129,16 +125,13 @@ public class MainActivity extends AppCompatActivity {
                         navController.navigate(R.id.navigation_home);
                         return true;
 
-                    case R.id.navigation_map:
-                        navController.navigate(R.id.navigation_map);
-                        return true;
-
                     case R.id.urbanSess:
                     navController.navigate(R.id.navigation_history);
                         return true;
 
-                    case R.id.urbanNavview:
-                        navController.navigate(R.id.navigation_chat);
+                    case R.id.urbanProfile:
+                        //navController.navigate(R.id.navigation_chat);
+                        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                         return true;
                 }
                 return false;

@@ -2,13 +2,18 @@ package com.androiddevs.runningapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.androiddevs.runningapp.control.LocationManager;
 import com.androiddevs.runningapp.databinding.ActivityProfileBinding;
 import com.androiddevs.runningapp.databinding.ActivityRegisterBinding;
 import com.androiddevs.runningapp.login.EmailLoginActivity;
@@ -16,6 +21,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,6 +33,8 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore firebaseFirestore;
     private ActivityProfileBinding mBinding;
+
+    public BottomNavigationView bottomNavigationView;
 
     UserModel user;
 
@@ -120,6 +129,27 @@ public class ProfileActivity extends AppCompatActivity {
 
         });
 
+
+        bottomNavigationView = mBinding.urbanNavview;
+        bottomNavigationView.setSelectedItemId(R.id.urbanProfile);
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() { //hacky fix to navigation issue
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.urbanHome:
+                        startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                        return true;
+
+                    case R.id.urbanSess:
+                        return true;
+
+                    case R.id.urbanProfile:
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
 }
