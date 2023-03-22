@@ -60,11 +60,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, StartActivity.class));
             finish();
             return;
-        }
-        else
+        }else
         {
-            mFirebaseAuth.signOut();
-            startActivity(new Intent(this, StartActivity.class));
+            startActivity(new Intent(this, ProfileActivity.class));
+            finish();
         }
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
